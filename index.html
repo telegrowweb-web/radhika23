@@ -39,12 +39,18 @@
       --sebi:  #ffd600;
     }
 
-    html, body {
-      height: 100%; width: 100%;
+    html {
+      height: 100%;
+      width: 100%;
+      background: var(--dark);
+    }
+
+    body {
+      min-height: 100%;
+      width: 100%;
       background: var(--dark);
       font-family: 'DM Sans', sans-serif;
       color: var(--txt);
-      overflow: hidden;
     }
 
     /* ── BG ── */
@@ -56,7 +62,6 @@
         radial-gradient(ellipse at 50% 50%,  rgba(0,80,50,0.10)   0%, transparent 60%);
     }
 
-    /* ── FINE DOT TEXTURE ── */
     .texture {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background-image: radial-gradient(circle, rgba(0,200,150,0.08) 1px, transparent 1px);
@@ -68,7 +73,6 @@
       100% { background-position: 22px 22px; }
     }
 
-    /* ── DIAGONAL LINES ── */
     .diag {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background-image: repeating-linear-gradient(
@@ -78,7 +82,6 @@
       );
     }
 
-    /* ── SCAN LINE ── */
     .scan {
       position: fixed; left: 0; right: 0; height: 1px;
       background: linear-gradient(90deg, transparent, rgba(0,200,150,0.45), transparent);
@@ -92,7 +95,6 @@
       100% { top:100%; opacity:0; }
     }
 
-    /* ── ORBS ── */
     .orb { position:fixed; border-radius:50%; filter:blur(80px); z-index:0; pointer-events:none; }
     .orb1 { width:320px;height:320px; background:rgba(0,200,150,0.14); top:-90px;   right:-70px; animation:orbF 10s ease-in-out infinite alternate; }
     .orb2 { width:240px;height:240px; background:rgba(0,168,120,0.10); bottom:-70px;left:-50px;  animation:orbF 13s ease-in-out infinite alternate-reverse; }
@@ -100,15 +102,15 @@
     @keyframes orbF { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(14px,18px) scale(1.08)} }
 
     /* ════════════════════════════════
-       PAGE
+       PAGE — DESKTOP default (centered)
     ════════════════════════════════ */
     .page {
       position: relative; z-index: 1;
-      height: 100vh;
+      min-height: 100vh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 24px 22px 30px;
-      overflow: hidden; gap: 0;
+      padding: 32px 22px 40px;
+      gap: 0;
     }
 
     /* ── SEBI HEADER BADGE ── */
@@ -117,7 +119,7 @@
       background: linear-gradient(135deg, rgba(245,200,66,0.15), rgba(230,184,0,0.08));
       border: 1px solid rgba(245,200,66,0.35);
       border-radius: 999px; padding: 5px 16px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       text-decoration: none;
       animation: fadeUp .5s ease both;
       transition: border-color .2s, background .2s;
@@ -144,7 +146,6 @@
     }
     .logo-outer { position: relative; width: 112px; height: 112px; }
 
-    /* Elegant multi-layer ring */
     .lr1 {
       position: absolute; inset: -5px; border-radius: 50%;
       border: 2px solid transparent;
@@ -170,7 +171,6 @@
     }
     .l-img img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Corner accent dots */
     .ldot { position:absolute; width:6px; height:6px; border-radius:50%; }
     .ld1 { top:-2px;    left:50%;  transform:translateX(-50%); background:var(--em);   box-shadow:0 0 8px var(--em); }
     .ld2 { bottom:-2px; left:50%;  transform:translateX(-50%); background:var(--em);   box-shadow:0 0 8px var(--em); }
@@ -178,7 +178,6 @@
     .ld4 { right:-2px;  top:50%;   transform:translateY(-50%); background:var(--gold); box-shadow:0 0 8px var(--gold); }
     @keyframes lrSpin { to { transform:rotate(360deg); } }
 
-    /* SEBI verified badge on logo */
     .sebi-badge {
       position: absolute; bottom: 2px; right: 2px;
       width: 28px; height: 28px; border-radius: 50%;
@@ -188,7 +187,6 @@
       box-shadow: 0 2px 10px rgba(245,200,66,.5);
     }
 
-    /* Name tag */
     .name-tag {
       margin-top: 13px;
       display: flex; align-items: center; gap: 6px;
@@ -204,7 +202,7 @@
     /* ── TITLE ── */
     .title-link { text-decoration: none; display: block; width: 100%; }
     .title-wrap {
-      text-align: center; margin-top: 13px;
+      text-align: center; margin-top: 14px;
       animation: fadeUp .5s .14s ease both;
     }
     .pre-title {
@@ -236,7 +234,7 @@
       border: 1px solid var(--bdr);
       border-radius: 12px; overflow: hidden;
       width: 100%; max-width: 340px;
-      margin-top: 13px;
+      margin-top: 14px;
       text-decoration: none;
       animation: fadeUp .5s .22s ease both;
       transition: border-color .2s;
@@ -263,7 +261,7 @@
     .pills {
       display: flex; flex-wrap: wrap; gap: 7px;
       justify-content: center; width: 100%;
-      margin-top: 13px;
+      margin-top: 14px;
       animation: fadeUp .5s .30s ease both;
     }
     .pill {
@@ -300,7 +298,7 @@
     /* ── CTA BUTTON ── */
     .cta-wrap {
       width: 100%; max-width: 340px;
-      margin-top: 15px;
+      margin-top: 16px;
       animation: fadeUp .5s .46s ease both;
     }
     .btn {
@@ -335,9 +333,10 @@
 
     /* Credit */
     .credit {
-      position: fixed; bottom: 9px; left: 0; right: 0;
+      margin-top: 20px;
       text-align: center; font-size: 11px;
-      color: var(--mut); z-index: 100; letter-spacing: .03em;
+      color: var(--mut); letter-spacing: .03em;
+      animation: fadeUp .5s .54s ease both;
     }
     .credit a { color: var(--em); text-decoration: none; font-weight: 700; }
     .credit a:hover { text-decoration: underline; }
@@ -348,50 +347,63 @@
     }
 
     /* ════════════════════════════════
-       PHONE  ≤ 480px
-       Bigger texture + proper sizing
+       PHONE  ≤ 480px  — TOP-ALIGNED
     ════════════════════════════════ */
     @media (max-width: 480px) {
-      html, body { overflow: hidden; }
-      .page { padding: 16px 18px 28px; justify-content: center; gap: 0; }
 
-      /* SEBI header */
-      .sebi-header { font-size: 9px; padding: 5px 14px; margin-bottom: 14px; }
-      .sebi-txt { font-size: 9px; letter-spacing: .2em; }
+      body { overflow-y: auto; }
+
+      .page {
+        min-height: 100vh;
+        justify-content: flex-start;   /* ← push everything to top */
+        padding: 28px 18px 36px;       /* top padding = breathing room from status bar */
+        gap: 0;
+        align-items: center;
+      }
+
+      /* SEBI badge — tight top margin */
+      .sebi-header {
+        margin-bottom: 18px;
+        padding: 5px 14px;
+      }
+      .sebi-txt { font-size: 9px; letter-spacing: .18em; }
       .sebi-dot { width: 7px; height: 7px; }
 
-      /* Logo — BIGGER on phone */
-      .logo-outer { width: 110px; height: 110px; }
+      /* Logo */
+      .logo-outer { width: 100px; height: 100px; }
       .sebi-badge { width: 26px; height: 26px; font-size: 12px; }
-      .name-tag { margin-top: 12px; }
+      .name-tag { margin-top: 11px; }
       .nt-txt { font-size: 9px; letter-spacing: .18em; }
 
       /* Title */
       .title-wrap { margin-top: 14px; }
-      .pre-title { font-size: 7.5px; letter-spacing: .24em; margin-bottom: 4px; }
-      h1 { font-size: clamp(21px, 5.8vw, 27px); }
-      h1 .s { font-size: .65em; }
-      .tagline { font-size: 10.5px; margin-top: 6px; line-height: 1.6; }
+      .pre-title { font-size: 7.5px; letter-spacing: .22em; margin-bottom: 4px; }
+      h1 { font-size: 26px; }
+      h1 .s { font-size: .62em; }
+      .tagline { font-size: 11px; margin-top: 6px; line-height: 1.6; }
 
       /* Accuracy strip */
-      .acc-strip { margin-top: 13px; border-radius: 10px; max-width: 100%; }
-      .acc-item { padding: 9px 5px; }
-      .acc-num { font-size: 20px; }
+      .acc-strip { margin-top: 14px; border-radius: 10px; max-width: 100%; }
+      .acc-item { padding: 10px 5px; }
+      .acc-num { font-size: 21px; }
       .acc-lbl { font-size: 7.5px; }
 
       /* Pills */
-      .pills { margin-top: 12px; gap: 6px; }
-      .pill { font-size: 10px; padding: 6px 11px; border-radius: 6px; }
+      .pills { margin-top: 13px; gap: 7px; }
+      .pill { font-size: 10.5px; padding: 6px 11px; border-radius: 6px; }
 
-      /* Info */
-      .info-row { margin-top: 11px; gap: 8px; }
-      .info-item { font-size: 9.5px; }
+      /* Info row */
+      .info-row { margin-top: 12px; gap: 9px; }
+      .info-item { font-size: 10px; }
 
-      /* Button */
-      .cta-wrap { margin-top: 14px; max-width: 100%; padding: 0 2px; }
+      /* CTA */
+      .cta-wrap { margin-top: 15px; max-width: 100%; padding: 0 2px; }
       .btn { font-size: 13.5px; padding: 15px 18px; letter-spacing: .09em; border-radius: 10px; }
 
-      /* BIGGER texture on phone */
+      /* Credit */
+      .credit { margin-top: 18px; font-size: 10.5px; }
+
+      /* Texture — slightly denser on phone */
       .texture {
         background-image: radial-gradient(circle, rgba(0,200,150,0.12) 1.5px, transparent 1.5px);
         background-size: 18px 18px;
@@ -403,30 +415,40 @@
           rgba(0,200,150,0.045) 28px, rgba(0,200,150,0.045) 29px
         );
       }
-
-      .credit { font-size: 10px; bottom: 7px; }
     }
 
+    /* Extra small phones */
     @media (max-width: 370px) {
-      .logo-outer { width: 92px; height: 92px; }
-      h1 { font-size: 19px; }
+      .page { padding: 22px 14px 28px; }
+      .logo-outer { width: 88px; height: 88px; }
+      h1 { font-size: 22px; }
       .acc-num { font-size: 18px; }
       .pill { font-size: 9.5px; padding: 5px 9px; }
-      .stats { gap: 12px; }
-      .cta-wrap { margin-top: 12px; }
+      .cta-wrap { margin-top: 13px; }
       .btn { font-size: 12.5px; padding: 13px 14px; }
-      .info-row { margin-top: 9px; gap: 6px; }
-      .pills { margin-top: 10px; gap: 5px; }
-      .acc-strip { margin-top: 10px; }
+      .info-row { margin-top: 10px; gap: 7px; }
+      .pills { margin-top: 11px; gap: 6px; }
+      .acc-strip { margin-top: 12px; }
       .title-wrap { margin-top: 12px; }
-      .sebi-header { margin-bottom: 11px; }
+      .sebi-header { margin-bottom: 14px; }
+      .tagline { font-size: 10.5px; }
+    }
+
+    /* ════════════════════════════════
+       TABLET  ≥ 600px
+    ════════════════════════════════ */
+    @media (min-width: 600px) and (max-width: 767px) {
+      .page { padding: 36px 28px 40px; }
+      .logo-outer { width: 118px; height: 118px; }
+      h1 { font-size: 36px; }
+      .acc-strip, .cta-wrap { max-width: 380px; }
     }
 
     /* ════════════════════════════════
        LAPTOP  ≥ 768px
     ════════════════════════════════ */
     @media (min-width: 768px) {
-      .page { padding: 22px 36px 28px; }
+      .page { padding: 22px 36px 28px; min-height: 100vh; justify-content: center; }
 
       .sebi-header { font-size: 10.5px; padding: 6px 20px; margin-bottom: 16px; }
       .sebi-txt { font-size: 10.5px; letter-spacing: .26em; }
@@ -454,6 +476,8 @@
 
       .cta-wrap { max-width: 420px; margin-top: 17px; }
       .btn { font-size: 15px; padding: 16px 34px; letter-spacing: .1em; border-radius: 12px; }
+
+      .credit { margin-top: 22px; font-size: 11px; }
     }
 
     @media (min-width: 1200px) {
@@ -475,13 +499,13 @@
 
   <main class="page">
 
-    <!-- SEBI Header Badge — LINKED -->
+    <!-- SEBI Header Badge -->
     <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="sebi-header">
       <div class="sebi-dot"></div>
       <span class="sebi-txt">✦ &nbsp; SEBI Registered Analyst &nbsp; ✦</span>
     </a>
 
-    <!-- Logo — LINKED -->
+    <!-- Logo -->
     <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="logo-link">
       <div class="logo-section">
         <div class="logo-outer">
@@ -509,7 +533,7 @@
       </div>
     </a>
 
-    <!-- Title — LINKED -->
+    <!-- Title -->
     <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="title-link">
       <div class="title-wrap">
         <div class="pre-title">— India's Trusted Options Expert —</div>
@@ -521,7 +545,7 @@
       </div>
     </a>
 
-    <!-- Accuracy Strip — LINKED -->
+    <!-- Accuracy Strip -->
     <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="acc-strip">
       <div class="acc-item">
         <div class="acc-num">27K+</div>
@@ -537,7 +561,7 @@
       </div>
     </a>
 
-    <!-- Feature Pills — each LINKED -->
+    <!-- Feature Pills -->
     <div class="pills">
       <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="pill">
         <div class="pd"></div>BankNifty Options
@@ -553,7 +577,7 @@
       </a>
     </div>
 
-    <!-- Info strip — each LINKED -->
+    <!-- Info strip -->
     <div class="info-row">
       <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="info-item">✅ SEBI Verified</a>
       <div class="info-sep"></div>
@@ -562,7 +586,7 @@
       <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="info-item">🔥 Daily Calls</a>
     </div>
 
-    <!-- CTA Button — LINKED -->
+    <!-- CTA Button -->
     <div class="cta-wrap">
       <a href="https://t.me/+5IFzPm2kdA81NmE1" target="_blank" rel="noopener" class="btn">
         <span class="btn-inner">
@@ -574,9 +598,10 @@
       </a>
     </div>
 
-  </main>
+    <!-- Credit -->
+    <p class="credit">Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener">@Nexgroww_agency</a></p>
 
-  <p class="credit">Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener">@Nexgroww_agency</a></p>
+  </main>
 
 </body>
 </html>
