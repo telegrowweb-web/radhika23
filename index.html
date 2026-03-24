@@ -26,17 +26,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --em:    #00c896;
-      --em2:   #00a878;
-      --em3:   #80ffd4;
-      --gold:  #f5c842;
-      --gold2: #e6b800;
-      --dark:  #020d08;
-      --card:  rgba(0,200,150,0.06);
-      --bdr:   rgba(0,200,150,0.18);
-      --txt:   #e0fff4;
-      --mut:   #3d7a60;
-      --sebi:  #ffd600;
+      --em:    #00b4ff;
+      --em2:   #0077cc;
+      --em3:   #7ee8ff;
+      --gold:  #00e5ff;
+      --gold2: #0099cc;
+      --dark:  #020a14;
+      --card:  rgba(0,180,255,0.06);
+      --bdr:   rgba(0,180,255,0.18);
+      --txt:   #e0f6ff;
+      --mut:   #2e6a8a;
+      --sebi:  #00e5ff;
     }
 
     html {
@@ -57,14 +57,14 @@
     .bg {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background:
-        radial-gradient(ellipse at 15% 10%,  rgba(0,200,150,0.16) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 90%,  rgba(0,168,120,0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%,  rgba(0,80,50,0.10)   0%, transparent 60%);
+        radial-gradient(ellipse at 15% 10%,  rgba(0,180,255,0.16) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 90%,  rgba(0,120,200,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%,  rgba(0,50,100,0.10)  0%, transparent 60%);
     }
 
     .texture {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: radial-gradient(circle, rgba(0,200,150,0.08) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(0,180,255,0.08) 1px, transparent 1px);
       background-size: 22px 22px;
       animation: textureDrift 25s linear infinite;
     }
@@ -78,13 +78,13 @@
       background-image: repeating-linear-gradient(
         45deg,
         transparent, transparent 38px,
-        rgba(0,200,150,0.028) 38px, rgba(0,200,150,0.028) 39px
+        rgba(0,180,255,0.028) 38px, rgba(0,180,255,0.028) 39px
       );
     }
 
     .scan {
       position: fixed; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,200,150,0.45), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0,180,255,0.45), transparent);
       z-index: 0; pointer-events: none;
       animation: scanMove 12s linear infinite;
     }
@@ -96,9 +96,9 @@
     }
 
     .orb { position:fixed; border-radius:50%; filter:blur(80px); z-index:0; pointer-events:none; }
-    .orb1 { width:320px;height:320px; background:rgba(0,200,150,0.14); top:-90px;   right:-70px; animation:orbF 10s ease-in-out infinite alternate; }
-    .orb2 { width:240px;height:240px; background:rgba(0,168,120,0.10); bottom:-70px;left:-50px;  animation:orbF 13s ease-in-out infinite alternate-reverse; }
-    .orb3 { width:150px;height:150px; background:rgba(245,200,66,0.07); top:40%;    right:-30px; animation:orbF 8s ease-in-out infinite alternate; }
+    .orb1 { width:320px;height:320px; background:rgba(0,180,255,0.14); top:-90px;   right:-70px; animation:orbF 10s ease-in-out infinite alternate; }
+    .orb2 { width:240px;height:240px; background:rgba(0,120,200,0.10); bottom:-70px;left:-50px;  animation:orbF 13s ease-in-out infinite alternate-reverse; }
+    .orb3 { width:150px;height:150px; background:rgba(0,229,255,0.08); top:40%;    right:-30px; animation:orbF 8s ease-in-out infinite alternate; }
     @keyframes orbF { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(14px,18px) scale(1.08)} }
 
     /* ════════════════════════════════
@@ -161,13 +161,13 @@
     }
     .lr3 {
       position: absolute; inset: -18px; border-radius: 50%;
-      border: 1px solid rgba(245,200,66,0.1);
+      border: 1px solid rgba(0,229,255,0.12);
       animation: lrSpin 15s linear infinite;
     }
     .l-img {
       position: absolute; inset: 0; border-radius: 50%;
       overflow: hidden; display: flex; align-items: center; justify-content: center;
-      background: #0a1f14;
+      background: #040f1a;
     }
     .l-img img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -184,7 +184,7 @@
       background: linear-gradient(135deg, var(--gold), var(--gold2));
       display: flex; align-items: center; justify-content: center;
       font-size: 13px; border: 2px solid var(--dark); z-index: 3;
-      box-shadow: 0 2px 10px rgba(245,200,66,.5);
+      box-shadow: 0 2px 10px rgba(0,229,255,.5);
     }
 
     .name-tag {
@@ -214,10 +214,10 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(22px, 5.8vw, 46px);
       font-weight: 700; letter-spacing: .04em; line-height: 1.05; color: #fff;
-      text-shadow: 0 0 40px rgba(0,200,150,.25);
+      text-shadow: 0 0 40px rgba(0,180,255,.25);
     }
-    h1 .r  { color: var(--em);   text-shadow: 0 0 22px rgba(0,200,150,.8); }
-    h1 .s  { color: var(--gold); text-shadow: 0 0 18px rgba(245,200,66,.7); font-size: .7em; vertical-align: middle; }
+    h1 .r  { color: var(--em);   text-shadow: 0 0 22px rgba(0,180,255,.8); }
+    h1 .s  { color: var(--gold); text-shadow: 0 0 18px rgba(0,229,255,.7); font-size: .7em; vertical-align: middle; }
     .tagline {
       margin-top: 6px;
       font-size: clamp(10px, 2.2vw, 12.5px);
@@ -307,12 +307,12 @@
       width: 100%; padding: 15px 28px; border-radius: 10px;
       background: linear-gradient(135deg, var(--em2), var(--em), var(--em3));
       background-size: 200% auto;
-      color: #020d08;
+      color: #020a14;
       font-family: 'DM Sans', sans-serif;
       font-weight: 800; font-size: 14px; letter-spacing: .1em;
       text-transform: uppercase; text-decoration: none;
       border: none; cursor: pointer;
-      box-shadow: 0 6px 26px rgba(0,200,150,.38);
+      box-shadow: 0 6px 26px rgba(0,180,255,.38);
       animation: btnPulse 2.2s ease-in-out infinite, gSlide 3s linear infinite;
     }
     .btn::before {
@@ -323,13 +323,13 @@
     }
     @keyframes shimmer { 0%{transform:translateX(-100%)} 55%,100%{transform:translateX(100%)} }
     @keyframes btnPulse {
-      0%,100% { transform:scale(1);    box-shadow:0 6px 26px rgba(0,200,150,.38); }
-      50%      { transform:scale(1.04); box-shadow:0 10px 38px rgba(0,200,150,.6); }
+      0%,100% { transform:scale(1);    box-shadow:0 6px 26px rgba(0,180,255,.38); }
+      50%      { transform:scale(1.04); box-shadow:0 10px 38px rgba(0,180,255,.6); }
     }
     @keyframes gSlide { 0%{background-position:0% center} 100%{background-position:200% center} }
     .btn-inner { position:relative; z-index:1; display:flex; align-items:center; gap:10px; }
     .tg { width:18px; height:18px; flex-shrink:0; }
-    .tg path { fill:#020d08; }
+    .tg path { fill:#020a14; }
 
     /* Credit */
     .credit {
@@ -356,14 +356,14 @@
       .page {
         min-height: 100vh;
         justify-content: flex-start;
-        padding: 36px 20px 52px;   /* generous top + big bottom gap */
+        padding: 40px 20px 58px;
         gap: 0;
         align-items: center;
       }
 
       /* SEBI badge */
       .sebi-header {
-        margin-bottom: 24px;       /* gap below badge */
+        margin-bottom: 29px;
         padding: 6px 16px;
       }
       .sebi-txt { font-size: 9px; letter-spacing: .18em; }
@@ -376,43 +376,43 @@
       .nt-txt { font-size: 9px; letter-spacing: .18em; }
 
       /* Title — gap above */
-      .title-wrap { margin-top: 22px; }
+      .title-wrap { margin-top: 27px; }
       .pre-title { font-size: 7.5px; letter-spacing: .22em; margin-bottom: 5px; }
       h1 { font-size: 26px; }
       h1 .s { font-size: .62em; }
       .tagline { font-size: 11.5px; margin-top: 8px; line-height: 1.7; }
 
       /* Accuracy strip — gap above */
-      .acc-strip { margin-top: 20px; border-radius: 10px; max-width: 100%; }
+      .acc-strip { margin-top: 25px; border-radius: 10px; max-width: 100%; }
       .acc-item { padding: 11px 5px; }
       .acc-num { font-size: 22px; }
       .acc-lbl { font-size: 7.5px; margin-top: 3px; }
 
       /* Pills — gap above */
-      .pills { margin-top: 18px; gap: 8px; }
+      .pills { margin-top: 23px; gap: 8px; }
       .pill { font-size: 10.5px; padding: 7px 12px; border-radius: 7px; }
 
       /* Info row — gap above */
-      .info-row { margin-top: 18px; gap: 10px; }
+      .info-row { margin-top: 23px; gap: 10px; }
       .info-item { font-size: 10.5px; }
 
       /* CTA — gap above */
-      .cta-wrap { margin-top: 20px; max-width: 100%; padding: 0 2px; }
+      .cta-wrap { margin-top: 25px; max-width: 100%; padding: 0 2px; }
       .btn { font-size: 13.5px; padding: 16px 18px; letter-spacing: .09em; border-radius: 10px; }
 
-      /* Credit — big gap above + bottom breathing room */
-      .credit { margin-top: 26px; margin-bottom: 8px; font-size: 10.5px; }
+      /* Credit */
+      .credit { margin-top: 31px; margin-bottom: 8px; font-size: 10.5px; }
 
       /* Texture */
       .texture {
-        background-image: radial-gradient(circle, rgba(0,200,150,0.12) 1.5px, transparent 1.5px);
+        background-image: radial-gradient(circle, rgba(0,180,255,0.12) 1.5px, transparent 1.5px);
         background-size: 18px 18px;
       }
       .diag {
         background-image: repeating-linear-gradient(
           45deg,
           transparent, transparent 28px,
-          rgba(0,200,150,0.045) 28px, rgba(0,200,150,0.045) 29px
+          rgba(0,180,255,0.045) 28px, rgba(0,180,255,0.045) 29px
         );
       }
     }
