@@ -355,55 +355,55 @@
 
       .page {
         min-height: 100vh;
-        justify-content: flex-start;   /* ← push everything to top */
-        padding: 28px 18px 36px;       /* top padding = breathing room from status bar */
+        justify-content: flex-start;
+        padding: 36px 20px 52px;   /* generous top + big bottom gap */
         gap: 0;
         align-items: center;
       }
 
-      /* SEBI badge — tight top margin */
+      /* SEBI badge */
       .sebi-header {
-        margin-bottom: 18px;
-        padding: 5px 14px;
+        margin-bottom: 24px;       /* gap below badge */
+        padding: 6px 16px;
       }
       .sebi-txt { font-size: 9px; letter-spacing: .18em; }
       .sebi-dot { width: 7px; height: 7px; }
 
       /* Logo */
-      .logo-outer { width: 100px; height: 100px; }
-      .sebi-badge { width: 26px; height: 26px; font-size: 12px; }
-      .name-tag { margin-top: 11px; }
+      .logo-outer { width: 104px; height: 104px; }
+      .sebi-badge { width: 27px; height: 27px; font-size: 13px; }
+      .name-tag { margin-top: 13px; }
       .nt-txt { font-size: 9px; letter-spacing: .18em; }
 
-      /* Title */
-      .title-wrap { margin-top: 14px; }
-      .pre-title { font-size: 7.5px; letter-spacing: .22em; margin-bottom: 4px; }
+      /* Title — gap above */
+      .title-wrap { margin-top: 22px; }
+      .pre-title { font-size: 7.5px; letter-spacing: .22em; margin-bottom: 5px; }
       h1 { font-size: 26px; }
       h1 .s { font-size: .62em; }
-      .tagline { font-size: 11px; margin-top: 6px; line-height: 1.6; }
+      .tagline { font-size: 11.5px; margin-top: 8px; line-height: 1.7; }
 
-      /* Accuracy strip */
-      .acc-strip { margin-top: 14px; border-radius: 10px; max-width: 100%; }
-      .acc-item { padding: 10px 5px; }
-      .acc-num { font-size: 21px; }
-      .acc-lbl { font-size: 7.5px; }
+      /* Accuracy strip — gap above */
+      .acc-strip { margin-top: 20px; border-radius: 10px; max-width: 100%; }
+      .acc-item { padding: 11px 5px; }
+      .acc-num { font-size: 22px; }
+      .acc-lbl { font-size: 7.5px; margin-top: 3px; }
 
-      /* Pills */
-      .pills { margin-top: 13px; gap: 7px; }
-      .pill { font-size: 10.5px; padding: 6px 11px; border-radius: 6px; }
+      /* Pills — gap above */
+      .pills { margin-top: 18px; gap: 8px; }
+      .pill { font-size: 10.5px; padding: 7px 12px; border-radius: 7px; }
 
-      /* Info row */
-      .info-row { margin-top: 12px; gap: 9px; }
-      .info-item { font-size: 10px; }
+      /* Info row — gap above */
+      .info-row { margin-top: 18px; gap: 10px; }
+      .info-item { font-size: 10.5px; }
 
-      /* CTA */
-      .cta-wrap { margin-top: 15px; max-width: 100%; padding: 0 2px; }
-      .btn { font-size: 13.5px; padding: 15px 18px; letter-spacing: .09em; border-radius: 10px; }
+      /* CTA — gap above */
+      .cta-wrap { margin-top: 20px; max-width: 100%; padding: 0 2px; }
+      .btn { font-size: 13.5px; padding: 16px 18px; letter-spacing: .09em; border-radius: 10px; }
 
-      /* Credit */
-      .credit { margin-top: 18px; font-size: 10.5px; }
+      /* Credit — big gap above + bottom breathing room */
+      .credit { margin-top: 26px; margin-bottom: 8px; font-size: 10.5px; }
 
-      /* Texture — slightly denser on phone */
+      /* Texture */
       .texture {
         background-image: radial-gradient(circle, rgba(0,200,150,0.12) 1.5px, transparent 1.5px);
         background-size: 18px 18px;
@@ -419,19 +419,20 @@
 
     /* Extra small phones */
     @media (max-width: 370px) {
-      .page { padding: 22px 14px 28px; }
-      .logo-outer { width: 88px; height: 88px; }
+      .page { padding: 28px 14px 44px; }
+      .logo-outer { width: 90px; height: 90px; }
       h1 { font-size: 22px; }
-      .acc-num { font-size: 18px; }
-      .pill { font-size: 9.5px; padding: 5px 9px; }
-      .cta-wrap { margin-top: 13px; }
-      .btn { font-size: 12.5px; padding: 13px 14px; }
-      .info-row { margin-top: 10px; gap: 7px; }
-      .pills { margin-top: 11px; gap: 6px; }
-      .acc-strip { margin-top: 12px; }
-      .title-wrap { margin-top: 12px; }
-      .sebi-header { margin-bottom: 14px; }
-      .tagline { font-size: 10.5px; }
+      .acc-num { font-size: 19px; }
+      .pill { font-size: 9.5px; padding: 6px 10px; }
+      .cta-wrap { margin-top: 18px; }
+      .btn { font-size: 12.5px; padding: 14px 14px; }
+      .info-row { margin-top: 15px; gap: 7px; }
+      .pills { margin-top: 15px; gap: 6px; }
+      .acc-strip { margin-top: 16px; }
+      .title-wrap { margin-top: 18px; }
+      .sebi-header { margin-bottom: 18px; }
+      .tagline { font-size: 11px; }
+      .credit { margin-top: 22px; }
     }
 
     /* ════════════════════════════════
